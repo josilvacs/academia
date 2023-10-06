@@ -1,0 +1,3 @@
+function CalcularIMC() {
+    alert('oi');
+}
