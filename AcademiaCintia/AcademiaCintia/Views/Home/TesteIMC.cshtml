@@ -19,25 +19,37 @@
                                 <th>STATUS</th>
                             </tr>
                         </thead>
+                          <p>O IMC é um cálculo universal e usado pela OMS para avaliar os riscos de obesidade e encontrar o peso
+                        ideal de uma pessoa em padrões de saúde.
+                        </p>
                         <tbody>
                             <tr>
-                                <td class="point">Abaixo 18,5</td>
+                                <td class="point">Abaixo 20</td>
                                 <td>Baixo Peso</td>
                             </tr>
                             <tr>
-                                <td class="point">18,5 - 24,9</td>
-                                <td>Saudavél</td>
+                                <td class="point">20 - 25</td>
+                                <td>Peso Ideal</td>
                             </tr>
                             <tr>
-                                <td class="point">25,0 - 29,9</td>
+                                <td class="point">25 - 30</td>
                                 <td>Sobrepeso</td>
                             </tr>
                             <tr>
-                                <td class="point">30,0 - e Acima</td>
-                                <td>Obesidade</td>
+                                <td class="point">30 - 35</td>
+                                <td>Obesidade Moderada</td>
+                            </tr>
+                            <tr>
+                                <td class="point">35 - 40</td>
+                                <td>Obesidade Severa</td>
+                            </tr>
+                            <tr>
+                                <td class="point">40 - 50</td>
+                                <td>Obesidade Morbida</td>
                             </tr>
                         </tbody>
                     </table>
+                  
                 </div>
             </div>
             <div class="col-lg-6">
@@ -46,34 +58,78 @@
                     <h2>CALCULE SEU IMC</h2>
                 </div>
                 <div class="chart-calculate-form">
-                    <p>O IMC é um cálculo simples e importante para avaliar os riscos de obesidade e encontrar o peso
-                        ideal de uma pessoa.
-                        Esse cálculo é universal e usado pela OMS para classificar padrões de saúde relacionados ao
-                        peso, como a desnutrição e a obesidade.</p>
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input id="altura" type="number" placeholder="Altura / cm">
-                            </div>
-                            <div class="col-sm-6">
-                                <input id="peso" type="number" placeholder="Peso / kg">
-                            </div>
-                            <div class="col-sm-6">
-                                <input id="idade" type="number" placeholder="Idade">
-                            </div>
-                            <div class="col-sm-6">
-                                <select id="sexo" name="sexo"> 
-                                    <option value="">Sexo</option>
-                                    <option value="masculino">Masculino</option>
-                                    <option value="feminino">Feminino</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-12">
-                                <button onclick="CalcularIMC()">Calcular</button>
-                            </div>
-                            <div id="Resultado"></div>
-                        </div>
-                    </form>
+                    
+                <script type="text/javascript">
+        function calcular(){
+            // pegando o id do formulario
+            var formulario = document.getElementById("formulario"); 
+            
+            // kilos é minha variavel
+            // formulario é o id do meu formulario
+            // value é o valor do input
+            // o + na frente transforma em number a string  
+                
+            var kilos       = +formulario.kilos.value;
+            var metros      = +formulario.metros.value;
+            var centimetros = +formulario.centimetros.value;
+            
+            // altura
+            var altura = (metros * 100 + centimetros) / 100;
+             
+            // imc
+            var imc = kilos / (altura * altura);
+            
+            // o metodo toFixed fixa apenas duas casas decimais apos o ponto.
+            formulario.imc.value = imc.toFixed(2);
+            
+            if(imc < 20)
+            {
+                alert('Você esta abaixo do peso!');
+            } 
+            else if(imc >20 && imc <= 25)
+            {
+                alert("Peso Ideal");
+            }
+            else if(imc >25 && imc <= 30)
+            {
+                alert("Sobrepeso");
+            }
+            else if(imc >30 && imc <= 35)
+            {
+                alert("Obesidade Moderada");
+            }
+            else if(imc >35 && imc <= 40)
+            {
+                alert("Obesidade Severa");
+            }
+            else if(imc >40 && imc <= 50)
+            {
+                alert("Obesidade Morbida");
+            }
+            else
+            {
+                alert('Gordo');
+            }
+        }
+    </script>
+                    <form id="formulario">
+    <fieldset>
+        
+        <label for="kilos"></label>
+        <input name="kilos" type="text" placeholder="Peso (kg):" />
+    
+        <label for="metros"></label>
+        <input name="metros" type="text" placeholder="Altura (m):"/>
+    
+        <label for="centimetros"></label>
+        <input name="centimetros" type="text" placeholder="Altura (cm):"/>
+    
+        <label for="imc"></label>
+        <input name="imc" type="text" disabled="disabled" placeholder="IMC:"/>
+            
+        <button href="#" onclick="calcular();">Calcular</button>
+    </fieldset>
+    </form>
                 </div>
             </div>
         </div>
