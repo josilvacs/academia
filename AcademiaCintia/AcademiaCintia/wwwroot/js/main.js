@@ -165,7 +165,9 @@
         }
         $('.ts-meta').each(function () {
             $(this).removeClass('show');
-            if ($(this).data('tsmeta') == tsfilter) {
+            let list = $(this).data('tsmeta').split(';');
+
+            if (list.includes(tsfilter)) {
                 $(this).addClass('show');
             }
         });
