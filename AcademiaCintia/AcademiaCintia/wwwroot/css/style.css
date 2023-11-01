@@ -2020,7 +2020,7 @@ ol {
 	margin-bottom: 24px;
 }
 
-.chart-calculate-form form input {
+.chart-calculate-form #formulario input {
 	font-size: 14px;
 	color: #c4c4c4;
 	width: 100%;
@@ -2032,7 +2032,7 @@ ol {
 	margin-bottom: 20px;
 }
 
-.chart-calculate-form form select {
+.chart-calculate-form #formulario select {
 	font-size: 14px;
 	color: #c4c4c4;
 	width: 100%;
@@ -2044,27 +2044,27 @@ ol {
 	margin-bottom: 20px;
 }
 
-.chart-calculate-form form input::-webkit-input-placeholder {
+.chart-calculate-form #formulario input::-webkit-input-placeholder {
 	color: #c4c4c4;
 }
 
-.chart-calculate-form form input::-moz-placeholder {
+.chart-calculate-form #formulario input::-moz-placeholder {
 	color: #c4c4c4;
 }
 
-.chart-calculate-form form input:-ms-input-placeholder {
+.chart-calculate-form #formulario input:-ms-input-placeholder {
 	color: #c4c4c4;
 }
 
-.chart-calculate-form form input::-ms-input-placeholder {
+.chart-calculate-form #formulario input::-ms-input-placeholder {
 	color: #c4c4c4;
 }
 
-.chart-calculate-form form input::placeholder {
+.chart-calculate-form #formulario input::placeholder {
 	color: #c4c4c4;
 }
 
-.chart-calculate-form form button {
+.chart-calculate-form #formulario button {
 	font-size: 14px;
 	color: #ffffff;
 	text-transform: uppercase;

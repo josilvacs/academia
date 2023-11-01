@@ -19,8 +19,9 @@
                                 <th>STATUS</th>
                             </tr>
                         </thead>
-                          <p>O IMC é um cálculo universal e usado pela OMS para avaliar os riscos de obesidade e encontrar o peso
-                        ideal de uma pessoa em padrões de saúde.
+                        <p>O IMC é um cálculo universal e usado pela OMS para avaliar os riscos de obesidade e encontrar
+                            o peso
+                            ideal de uma pessoa em padrões de saúde.
                         </p>
                         <tbody>
                             <tr>
@@ -49,7 +50,7 @@
                             </tr>
                         </tbody>
                     </table>
-                  
+
                 </div>
             </div>
             <div class="col-lg-6">
@@ -58,78 +59,25 @@
                     <h2>CALCULE SEU IMC</h2>
                 </div>
                 <div class="chart-calculate-form">
-                    
-                <script type="text/javascript">
-        function calcular(){
-            // pegando o id do formulario
-            var formulario = document.getElementById("formulario"); 
-            
-            // kilos é minha variavel
-            // formulario é o id do meu formulario
-            // value é o valor do input
-            // o + na frente transforma em number a string  
-                
-            var kilos       = +formulario.kilos.value;
-            var metros      = +formulario.metros.value;
-            var centimetros = +formulario.centimetros.value;
-            
-            // altura
-            var altura = (metros * 100 + centimetros) / 100;
-             
-            // imc
-            var imc = kilos / (altura * altura);
-            
-            // o metodo toFixed fixa apenas duas casas decimais apos o ponto.
-            formulario.imc.value = imc.toFixed(2);
-            
-            if(imc < 20)
-            {
-                alert('Você esta abaixo do peso!');
-            } 
-            else if(imc >20 && imc <= 25)
-            {
-                alert("Peso Ideal");
-            }
-            else if(imc >25 && imc <= 30)
-            {
-                alert("Sobrepeso");
-            }
-            else if(imc >30 && imc <= 35)
-            {
-                alert("Obesidade Moderada");
-            }
-            else if(imc >35 && imc <= 40)
-            {
-                alert("Obesidade Severa");
-            }
-            else if(imc >40 && imc <= 50)
-            {
-                alert("Obesidade Morbida");
-            }
-            else
-            {
-                alert('Gordo');
-            }
-        }
-    </script>
-                    <form id="formulario">
-    <fieldset>
-        
-        <label for="kilos"></label>
-        <input name="kilos" type="text" placeholder="Peso (kg):" />
-    
-        <label for="metros"></label>
-        <input name="metros" type="text" placeholder="Altura (m):"/>
-    
-        <label for="centimetros"></label>
-        <input name="centimetros" type="text" placeholder="Altura (cm):"/>
-    
-        <label for="imc"></label>
-        <input name="imc" type="text" disabled="disabled" placeholder="IMC:"/>
-            
-        <button href="#" onclick="calcular();">Calcular</button>
-    </fieldset>
-    </form>
+                 
+                    <div id="formulario">
+                        <fieldset>
+
+                            <label for="kilos"></label>
+                            <input name="kilos" id="kilos" type="text" placeholder="Peso (kg):" />
+
+                            <label for="metros"></label>
+                            <input name="metros" id="metros" type="text" placeholder="Altura (m):" />
+
+                            <label for="centimetros"></label>
+                            <input name="centimetros" id="centimetros" type="text" placeholder="Altura (cm):" />
+
+                            <label for="imc"></label>
+                            <input name="imc" id="imc" type="text" disabled="disabled" placeholder="IMC:" />
+
+                            <button onclick="calcular();">Calcular</button>
+                        </fieldset>
+                    </div>
                 </div>
             </div>
         </div>
