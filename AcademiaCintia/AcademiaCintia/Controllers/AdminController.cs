@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-namespace CozaStore.Controllers;
+namespace AcademiaCintia.Controllers;
 
 [Authorize(Roles = "Administrador, Funcionário")]
 public class AdminController : Controller
