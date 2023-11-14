@@ -1,0 +1,24 @@
+
+-- Salvar todos os arquivos, abrir o terminal e testar a codificação
+dotnet build
+
+
+-- Neste ponto precisando do servidor de banco de dados em execução, desta forma abra o Xampp Control Panel e clique para iniciar o processo do MySql.
+
+
+-- Caso não apresente nenhum erro, vamos criar o banco de dados usando migração, aqui teste primeiro se a ferramenta de migração está instalada
+No terminal: dotnet ef
+
+ Caso 1 - Apareceu uma mensagem vermelha informando que o comando ef não é reconhecido, neste caso, execute o comando: dotnet tool install --global dotnet-ef
+ 
+ Caso 2 - Apareceu algumas instruções e subindo um pouco o terminal um unicornio!!!! Estamos prontos para continuar.
+ 
+- Para criar uma migração execute no terminal:
+dotnet ef migrations add criando-banco
+
+- Para executar a migração no banco de dados, execute no terminal:
+dotnet ef database update
+
+
+-- Salvar todos os arquivos, abrir o terminal e execute o projeto
+dotnet watch run
