@@ -71,7 +71,10 @@ public class AppDbSeed
         List<Modalidade> modalidades = new() {
             new () {
                 Id = 1,
-                Nome = "Ballet Clássico"
+                Nome = "Ballet Clássico",
+                Descricao = "",
+                Foto = "/im",
+                CategoriaId = 2
             },
             new () {
                 Id = 2,

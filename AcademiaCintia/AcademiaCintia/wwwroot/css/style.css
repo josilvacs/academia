@@ -1433,71 +1433,73 @@ ol {
 	min-width: 100%;
 }
 
-.ss-text {
+.card-body {
 	background: #252525;
-	padding: 72px 30px;
+	margin: 0;
 	height: 293px;
-	position: relative;
 	z-index: 1;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
 }
 
-.ss-text:hover {
+.card-body:hover {
 	background: #363636;
+	border: 3px solid #3bb54a;
+
 }
 
-.ss-text:hover a {
+.card-body:hover a {
 	color: #3bb54a;
 }
 
-.ss-text:hover:after {
+.card-body:hover:after {
 	background: #363636;
 }
 
-.ss-text:after {
-	position: absolute;
-	left: -15px;
-	top: 50%;
-	height: 20px;
-	width: 20px;
-	background: #252525;
-	content: "";
-	-webkit-transform: rotate(45deg) translateY(-10px);
-	-ms-transform: rotate(45deg) translateY(-10px);
-	transform: rotate(45deg) translateY(-10px);
-	z-index: -1;
-	-webkit-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	transition: all 0.2s;
-}
-
-.ss-text.second-row:after {
+.card-body.second-row:after {
 	left: auto;
 	right: 0;
 }
 
-.ss-text h4 {
+.card-body h4 {
 	font-size: 22px;
-	color: #ffffff;
+	color: #3bb54a;
 	font-weight: 600;
 	margin-bottom: 10px;
 }
 
-.ss-text p {
+.card-body p {
 	margin-bottom: 11px;
 }
 
-.ss-text a {
+.card-body a {
 	font-size: 14px;
-	color: #ffffff;
+	color: #3bb54a;
 	font-weight: 700;
 	text-transform: uppercase;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
 }
+
+.card-title {
+	color: white;
+	background-color: #3bb54a;
+	padding: 10px;
+	text-align: center;
+	font-size: 20px;
+
+}
+
+.card-text {
+	text-align: justify;
+	font-size: 14px;
+	line-height: 22px;
+	padding: 1.25rem;
+}
+
+
 
 /*---------------------
   Class Timetable Section
@@ -2843,10 +2845,10 @@ ol {
 		margin-top: 0;
 		margin-bottom: 30px;
 	}
-	.ss-text:after {
+	.card-body:after {
 		display: none;
 	}
-	.ss-text {
+	.card-body {
 		padding: 72px 60px;
 		margin-bottom: 30px;
 	}
@@ -3187,10 +3189,10 @@ ol {
 		margin-top: 0;
 		margin-bottom: 30px;
 	}
-	.ss-text:after {
+	.card-body:after {
 		display: none;
 	}
-	.ss-text {
+	.card-body {
 		padding: 72px 60px;
 		height: auto;
 	}
@@ -3220,7 +3222,7 @@ ol {
 	.ss-pic img {
 		height: auto;
 	}
-	.ss-text {
+	.card-body {
 		margin-bottom: 20px;
 	}
 	.blog-item .bi-pic img {
@@ -3273,4 +3275,13 @@ ol {
 	.search-model-form input {
 		font-size: 28px;
 	}
+}
+
+
+.bg-transparent {
+	background-color: transparent;
+}
+
+.bg-transparent .card-body {
+	height: fit-content;
 }
