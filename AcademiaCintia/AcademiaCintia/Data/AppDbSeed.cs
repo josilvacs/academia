@@ -183,7 +183,26 @@ public class AppDbSeed
         #endregion
 
         
-
+#region Populate Comentario
+        List<Categoria> categorias = new() {
+            new () {
+                Id = 1,
+                Nome = "Raphael Machyado Fernandes",
+                Nota = "5",
+                Comentario ="Academia top de mais, a melhor não tem. Professores sensacionais e a atenção dobrada em cima dos alunos!!!Vitão e Lopes estão de parabéns 👏🏻🤝🏻",
+                Foto = "~/img/testemonial/testemonialo-1.png"
+            },
+            new () {
+                Id = 2,
+                Nome = "Deise Kawamata",
+                Nota = "5",
+                Comentario ="",
+                Foto = "~/img/testemonial/testemonialo-2.png"
+            },
+            
+        };
+        builder.Entity<Categoria>().HasData(categorias);
+        #endregion
         
         #region Populate Roles - Perfis de Usuário
         List<IdentityRole> roles = new()
