@@ -28,7 +28,7 @@ public class AppDbSeed
         #endregion
         
 
-        #region Populate Categoria
+        #region Populate Professor
         List<Professor> professores = new() {
             new () {
                 Id = 1,
@@ -91,7 +91,7 @@ public class AppDbSeed
         builder.Entity<Professor>().HasData(professores);
         #endregion
 
-        #region Populate Categoria
+        #region Populate Modalidade
         List<Modalidade> modalidades = new() {
             new () {
                 Id = 1,
