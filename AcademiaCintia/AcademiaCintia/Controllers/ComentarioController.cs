@@ -57,12 +57,25 @@ namespace AcademiaCintia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,ComentarioTexto,ComentarioData,Nota,Foto")] Comentario comentario)
+        public async Task<IActionResult> Create([Bind("Id,Nome,ComentarioTexto,ComentarioData,Nota,Foto")] Comentario comentario, IFormFile formFile)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(comentario);
                 await _context.SaveChangesAsync();
+                if (formFile != null)
+                {
+                    string wwwRootPath = _hostEnvironment.WebRootPath;
+                    string fileName = comentario.Id.ToString("00") + Path.GetExtension(formFile.FileName);
+                    string uploads = Path.Combine(wwwRootPath, @"img\testimonial");
+                    string newFile = Path.Combine(uploads, fileName);
+                    using (var stream = new FileStream(newFile, FileMode.Create))
+                    {
+                        formFile.CopyTo(stream);
+                    }
+                    comentario.Foto = @"\img\testimonial\" + fileName;
+                    await _context.SaveChangesAsync();
+                }
                 return RedirectToAction(nameof(Index));
             }
             return View(comentario);
@@ -89,7 +102,7 @@ namespace AcademiaCintia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,ComentarioTexto,ComentarioData,Nota,Foto")] Comentario comentario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,ComentarioTexto,ComentarioData,Nota,Foto")] Comentario comentario, IFormFile formFile)
         {
             if (id != comentario.Id)
             {
@@ -100,6 +113,27 @@ namespace AcademiaCintia.Controllers
             {
                 try
                 {
+                    if (formFile != null)
+                    {
+                        string wwwRootPath = _hostEnvironment.WebRootPath;
+                        if (comentario.Foto != null)
+                        {
+                            string oldFile = Path.Combine(wwwRootPath, comentario.Foto.TrimStart('\\'));
+                            if (System.IO.File.Exists(oldFile))
+                            {
+                                System.IO.File.Delete(oldFile);
+                            }
+                        }
+
+                        string fileName = comentario.Id.ToString("00") + Path.GetExtension(formFile.FileName);
+                        string uploads = Path.Combine(wwwRootPath, @"img\testimonial");
+                        string newFile = Path.Combine(uploads, fileName);
+                        using (var stream = new FileStream(newFile, FileMode.Create))
+                        {
+                            formFile.CopyTo(stream);
+                        }
+                        comentario.Foto = @"\img\testimonial\" + fileName;
+                    }
                     _context.Update(comentario);
                     await _context.SaveChangesAsync();
                 }

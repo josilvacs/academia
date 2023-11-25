@@ -57,12 +57,25 @@ namespace AcademiaCintia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Cargo,Foto,Facebook,Instagram")] Professor professor)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Cargo,Foto,Facebook,Instagram")] Professor professor, IFormFile formFile)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(professor);
                 await _context.SaveChangesAsync();
+                if (formFile != null)
+                {
+                    string wwwRootPath = _hostEnvironment.WebRootPath;
+                    string fileName = professor.Id.ToString("00") + Path.GetExtension(formFile.FileName);
+                    string uploads = Path.Combine(wwwRootPath, @"img\team");
+                    string newFile = Path.Combine(uploads, fileName);
+                    using (var stream = new FileStream(newFile, FileMode.Create))
+                    {
+                        formFile.CopyTo(stream);
+                    }
+                    professor.Foto = @"\img\team\" + fileName;
+                    await _context.SaveChangesAsync();
+                }
                 return RedirectToAction(nameof(Index));
             }
             return View(professor);
@@ -89,7 +102,7 @@ namespace AcademiaCintia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cargo,Foto,Facebook,Instagram")] Professor professor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cargo,Foto,Facebook,Instagram")] Professor professor, IFormFile formFile)
         {
             if (id != professor.Id)
             {
@@ -100,6 +113,27 @@ namespace AcademiaCintia.Controllers
             {
                 try
                 {
+                    if (formFile != null)
+                    {
+                        string wwwRootPath = _hostEnvironment.WebRootPath;
+                        if (professor.Foto != null)
+                        {
+                            string oldFile = Path.Combine(wwwRootPath, professor.Foto.TrimStart('\\'));
+                            if (System.IO.File.Exists(oldFile))
+                            {
+                                System.IO.File.Delete(oldFile);
+                            }
+                        }
+
+                        string fileName = professor.Id.ToString("00") + Path.GetExtension(formFile.FileName);
+                        string uploads = Path.Combine(wwwRootPath, @"img\team");
+                        string newFile = Path.Combine(uploads, fileName);
+                        using (var stream = new FileStream(newFile, FileMode.Create))
+                        {
+                            formFile.CopyTo(stream);
+                        }
+                        professor.Foto = @"\img\team\" + fileName;
+                    }
                     _context.Update(professor);
                     await _context.SaveChangesAsync();
                 }

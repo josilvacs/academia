@@ -31,39 +31,39 @@ public class AppDbSeed
         List<Galeria> galerias = new() {
             new () {
                 Id = 1,
-                Foto = "/img/gallery-1"
+                Foto = "/img/gallery/gallery-1.jpg"
             },
             new () {
                 Id = 2,
-                Foto = "/img/gallery-2"
+                Foto = "/img/gallery/gallery-2.jpg"
             },
             new () {
                 Id = 3,
-                Foto = "/img/gallery-3"
+                Foto = "/img/gallery/gallery-3.jpg"
             },
             new () {
                 Id = 4,
-                Foto = "/img/gallery-4"
+                Foto = "/img/gallery/gallery-4.jpg"
             },
             new () {
                 Id = 5,
-                Foto = "/img/gallery-5"
+                Foto = "/img/gallery/gallery-5.jpg"
             },
             new () {
                 Id = 6,
-                Foto = "/img/gallery-6"
+                Foto = "/img/gallery/gallery-6.jpg"
             },
             new () {
                 Id = 7,
-                Foto = "/img/gallery-7"
+                Foto = "/img/gallery/gallery-7.jpg"
             },
             new () {
                 Id = 8,
-                Foto = "/img/gallery-8"
+                Foto = "/img/gallery/gallery-8.jpg"
             },
             new () {
                 Id = 9,
-                Foto = "/img/gallery-9"
+                Foto = "/img/gallery/gallery-9.jpg"
             }
         };
         builder.Entity<Galeria>().HasData(galerias);
@@ -75,7 +75,7 @@ public class AppDbSeed
                 Id = 1,
                 Nome = "Cintia Reco",
                 Cargo = "Diretora",
-                Foto = "/img/team-1.jpg",
+                Foto = "/img/team/team-1.jpg",
                 Facebook = "https://www.facebook.com/cintia.reco",
                 Instagram = "https://www.instagram.com/cintiareco/"
             },
@@ -83,7 +83,7 @@ public class AppDbSeed
                 Id = 2,
                 Nome = "Raissa Reco",
                 Cargo = "Professora Infantil e Juvenil",
-                Foto = "/img/team-2.jpg",
+                Foto = "/img/team/team-2.jpg",
                 Facebook = "https://www.facebook.com/raissa.reco",
                 Instagram = "https://www.instagram.com/raissa.recco/"
             },
@@ -91,7 +91,7 @@ public class AppDbSeed
                 Id = 3,
                 Nome = "Joany Silva",
                 Cargo = "Professora Infantil",
-                Foto = "/img/team-3.jpg",
+                Foto = "/img/team/team-3.jpg",
                 Facebook = "https://www.facebook.com/jooh.silva.1656",
                 Instagram = "https://www.instagram.com/jo.silvacs/"
             },
@@ -99,7 +99,7 @@ public class AppDbSeed
                 Id = 4,
                 Nome = "Vitor Baldi",
                 Cargo = "Gym Trainer",
-                Foto = "/img/team-4.jpg",
+                Foto = "/img/team/team-4.jpg",
                 Facebook = "https://www.facebook.com/vitor.baldi.5",
                 Instagram = "https://www.instagram.com/vitor.baldi_/"
             },
@@ -107,7 +107,7 @@ public class AppDbSeed
                 Id = 5,
                 Nome = "Roberta Garcia",
                 Cargo = "Gym Trainer",
-                Foto = "/img/team-5.jpg",
+                Foto = "/img/team/team-5.jpg",
                 Facebook = "https://www.facebook.com/roberta.garcia.315",
                 Instagram = "https://www.instagram.com/rogarciadias/"
             },
@@ -115,7 +115,7 @@ public class AppDbSeed
                 Id = 6,
                 Nome = "Luana Ruiz",
                 Cargo = "Professora de Ballet Adulto",
-                Foto = "/img/team-6.jpg",
+                Foto = "/img/team/team-6.jpg",
                 Facebook = "https://www.facebook.com/luana.ruiz.754",
                 Instagram = "https://www.instagram.com/luanaruiiz/"
             },
@@ -123,7 +123,7 @@ public class AppDbSeed
                 Id = 7,
                 Nome = "Raul Pinheiro",
                 Cargo = "Professor de Zumba",
-                Foto = "/img/team-7.jpg",
+                Foto = "/img/team/team-7.jpg",
                 Facebook = "https://www.facebook.com/rauldaniel.pinheiro",
                 Instagram = "https://www.instagram.com/rahul_black_swan/"
             },
@@ -131,7 +131,7 @@ public class AppDbSeed
                 Id = 8,
                 Nome = "Tathy Meneghesso",
                 Cargo = "Professora Fit Dance Teen & Kids",
-                Foto = "/img/team-8.jpg",
+                Foto = "/img/team/team-8.jpg",
                 Facebook = "https://www.facebook.com/profile.php?id=100015112025441",
                 Instagram = "https://www.instagram.com/tathy.7mene/ "
             },
@@ -239,7 +239,7 @@ public class AppDbSeed
                 ComentarioTexto = "Academia top de mais, a melhor não tem.Professores sensacionais e a atenção dobrada em cima dos alunos!!!Vitão e Lopes estão de parabéns 👏🏻🤝🏻",
                 ComentarioData = DateTime.Parse("24/11/2023 19:00"),
                 Nota = 5,
-                Foto = "/img/testemionial/testemionial-1"
+                Foto = "/img/testemionial/testemionial-1.jpg"
             },
             new () {
                 Id = 2,
@@ -247,7 +247,7 @@ public class AppDbSeed
                 ComentarioTexto = "",
                 ComentarioData = DateTime.Parse("24/11/2023 19:00"),
                 Nota = 5,
-                Foto = "/img/testemionial/testemionial-2"
+                Foto = "/img/testemionial/testemionial-2.jpg"
             }
         };
         builder.Entity<Comentario>().HasData(comentarios);

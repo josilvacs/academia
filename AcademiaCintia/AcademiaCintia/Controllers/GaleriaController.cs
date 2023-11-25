@@ -13,10 +13,12 @@ namespace AcademiaCintia.Controllers
     public class GaleriaController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public GaleriaController(AppDbContext context)
+        public GaleriaController(AppDbContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
 
         // GET: Galeria
@@ -54,12 +56,25 @@ namespace AcademiaCintia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Foto")] Galeria galeria)
+        public async Task<IActionResult> Create([Bind("Id,Foto")] Galeria galeria, IFormFile formFile)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(galeria);
                 await _context.SaveChangesAsync();
+                if (formFile != null)
+                {
+                    string wwwRootPath = _hostEnvironment.WebRootPath;
+                    string fileName = galeria.Id.ToString("00") + Path.GetExtension(formFile.FileName);
+                    string uploads = Path.Combine(wwwRootPath, @"img\gallery");
+                    string newFile = Path.Combine(uploads, fileName);
+                    using (var stream = new FileStream(newFile, FileMode.Create))
+                    {
+                        formFile.CopyTo(stream);
+                    }
+                    galeria.Foto = @"\img\gallery\" + fileName;
+                    await _context.SaveChangesAsync();
+                }
                 return RedirectToAction(nameof(Index));
             }
             return View(galeria);
@@ -86,7 +101,7 @@ namespace AcademiaCintia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Foto")] Galeria galeria)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Foto")] Galeria galeria, IFormFile formFile)
         {
             if (id != galeria.Id)
             {
@@ -97,6 +112,27 @@ namespace AcademiaCintia.Controllers
             {
                 try
                 {
+                    if (formFile != null)
+                    {
+                        string wwwRootPath = _hostEnvironment.WebRootPath;
+                        if (galeria.Foto != null)
+                        {
+                            string oldFile = Path.Combine(wwwRootPath, galeria.Foto.TrimStart('\\'));
+                            if (System.IO.File.Exists(oldFile))
+                            {
+                                System.IO.File.Delete(oldFile);
+                            }
+                        }
+
+                        string fileName = galeria.Id.ToString("00") + Path.GetExtension(formFile.FileName);
+                        string uploads = Path.Combine(wwwRootPath, @"img\gallery");
+                        string newFile = Path.Combine(uploads, fileName);
+                        using (var stream = new FileStream(newFile, FileMode.Create))
+                        {
+                            formFile.CopyTo(stream);
+                        }
+                        galeria.Foto = @"\img\gallery\" + fileName;
+                    }
                     _context.Update(galeria);
                     await _context.SaveChangesAsync();
                 }

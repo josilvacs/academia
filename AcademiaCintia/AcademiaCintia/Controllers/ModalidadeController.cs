@@ -60,12 +60,25 @@ namespace AcademiaCintia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Foto,CategoriaId")] Modalidade modalidade)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Foto,CategoriaId")] Modalidade modalidade,  IFormFile formFile)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(modalidade);
                 await _context.SaveChangesAsync();
+                if (formFile != null)
+                {
+                    string wwwRootPath = _hostEnvironment.WebRootPath;
+                    string fileName = modalidade.Id.ToString("00") + Path.GetExtension(formFile.FileName);
+                    string uploads = Path.Combine(wwwRootPath, @"img\services");
+                    string newFile = Path.Combine(uploads, fileName);
+                    using (var stream = new FileStream(newFile, FileMode.Create))
+                    {
+                        formFile.CopyTo(stream);
+                    }
+                    modalidade.Foto = @"\img\services\" + fileName;
+                    await _context.SaveChangesAsync();
+                }
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Nome", modalidade.CategoriaId);
@@ -94,7 +107,7 @@ namespace AcademiaCintia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao,Foto,CategoriaId")] Modalidade modalidade)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao,Foto,CategoriaId")] Modalidade modalidade, IFormFile formFile)
         {
             if (id != modalidade.Id)
             {
@@ -105,6 +118,28 @@ namespace AcademiaCintia.Controllers
             {
                 try
                 {
+                
+                    if (formFile != null)
+                    {
+                        string wwwRootPath = _hostEnvironment.WebRootPath;
+                        if (modalidade.Foto != null)
+                        {
+                            string oldFile = Path.Combine(wwwRootPath, modalidade.Foto.TrimStart('\\'));
+                            if (System.IO.File.Exists(oldFile))
+                            {
+                                System.IO.File.Delete(oldFile);
+                            }
+                        }
+
+                        string fileName = modalidade.Id.ToString("00") + Path.GetExtension(formFile.FileName);
+                        string uploads = Path.Combine(wwwRootPath, @"img\services");
+                        string newFile = Path.Combine(uploads, fileName);
+                        using (var stream = new FileStream(newFile, FileMode.Create))
+                        {
+                            formFile.CopyTo(stream);
+                        }
+                        modalidade.Foto = @"\img\services\" + fileName;
+                    }
                     _context.Update(modalidade);
                     await _context.SaveChangesAsync();
                 }

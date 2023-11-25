@@ -88,7 +88,7 @@ namespace AcademiaCintia.Migrations
                             Id = 1,
                             ComentarioData = new DateTime(2023, 11, 24, 19, 0, 0, 0, DateTimeKind.Unspecified),
                             ComentarioTexto = "Academia top de mais, a melhor não tem.Professores sensacionais e a atenção dobrada em cima dos alunos!!!Vitão e Lopes estão de parabéns 👏🏻🤝🏻",
-                            Foto = "/img/testemionial/testemionial-1",
+                            Foto = "/img/testemionial/testemionial-1.jpg",
                             Nome = "Raphael Machado Fernandes",
                             Nota = (byte)5
                         },
@@ -97,7 +97,7 @@ namespace AcademiaCintia.Migrations
                             Id = 2,
                             ComentarioData = new DateTime(2023, 11, 24, 19, 0, 0, 0, DateTimeKind.Unspecified),
                             ComentarioTexto = "",
-                            Foto = "/img/testemionial/testemionial-2",
+                            Foto = "/img/testemionial/testemionial-2.jpg",
                             Nome = "Deise Kawata",
                             Nota = (byte)5
                         });
@@ -121,47 +121,47 @@ namespace AcademiaCintia.Migrations
                         new
                         {
                             Id = 1,
-                            Foto = "/img/gallery-1"
+                            Foto = "/img/gallery/gallery-1.jpg"
                         },
                         new
                         {
                             Id = 2,
-                            Foto = "/img/gallery-2"
+                            Foto = "/img/gallery/gallery-2.jpg"
                         },
                         new
                         {
                             Id = 3,
-                            Foto = "/img/gallery-3"
+                            Foto = "/img/gallery/gallery-3.jpg"
                         },
                         new
                         {
                             Id = 4,
-                            Foto = "/img/gallery-4"
+                            Foto = "/img/gallery/gallery-4.jpg"
                         },
                         new
                         {
                             Id = 5,
-                            Foto = "/img/gallery-5"
+                            Foto = "/img/gallery/gallery-5.jpg"
                         },
                         new
                         {
                             Id = 6,
-                            Foto = "/img/gallery-6"
+                            Foto = "/img/gallery/gallery-6.jpg"
                         },
                         new
                         {
                             Id = 7,
-                            Foto = "/img/gallery-7"
+                            Foto = "/img/gallery/gallery-7.jpg"
                         },
                         new
                         {
                             Id = 8,
-                            Foto = "/img/gallery-8"
+                            Foto = "/img/gallery/gallery-8.jpg"
                         },
                         new
                         {
                             Id = 9,
-                            Foto = "/img/gallery-9"
+                            Foto = "/img/gallery/gallery-9.jpg"
                         });
                 });
 
@@ -331,7 +331,7 @@ namespace AcademiaCintia.Migrations
                             Id = 1,
                             Cargo = "Diretora",
                             Facebook = "https://www.facebook.com/cintia.reco",
-                            Foto = "/img/team-1.jpg",
+                            Foto = "/img/team/team-1.jpg",
                             Instagram = "https://www.instagram.com/cintiareco/",
                             Nome = "Cintia Reco"
                         },
@@ -340,7 +340,7 @@ namespace AcademiaCintia.Migrations
                             Id = 2,
                             Cargo = "Professora Infantil e Juvenil",
                             Facebook = "https://www.facebook.com/raissa.reco",
-                            Foto = "/img/team-2.jpg",
+                            Foto = "/img/team/team-2.jpg",
                             Instagram = "https://www.instagram.com/raissa.recco/",
                             Nome = "Raissa Reco"
                         },
@@ -349,7 +349,7 @@ namespace AcademiaCintia.Migrations
                             Id = 3,
                             Cargo = "Professora Infantil",
                             Facebook = "https://www.facebook.com/jooh.silva.1656",
-                            Foto = "/img/team-3.jpg",
+                            Foto = "/img/team/team-3.jpg",
                             Instagram = "https://www.instagram.com/jo.silvacs/",
                             Nome = "Joany Silva"
                         },
@@ -358,7 +358,7 @@ namespace AcademiaCintia.Migrations
                             Id = 4,
                             Cargo = "Gym Trainer",
                             Facebook = "https://www.facebook.com/vitor.baldi.5",
-                            Foto = "/img/team-4.jpg",
+                            Foto = "/img/team/team-4.jpg",
                             Instagram = "https://www.instagram.com/vitor.baldi_/",
                             Nome = "Vitor Baldi"
                         },
@@ -367,7 +367,7 @@ namespace AcademiaCintia.Migrations
                             Id = 5,
                             Cargo = "Gym Trainer",
                             Facebook = "https://www.facebook.com/roberta.garcia.315",
-                            Foto = "/img/team-5.jpg",
+                            Foto = "/img/team/team-5.jpg",
                             Instagram = "https://www.instagram.com/rogarciadias/",
                             Nome = "Roberta Garcia"
                         },
@@ -376,7 +376,7 @@ namespace AcademiaCintia.Migrations
                             Id = 6,
                             Cargo = "Professora de Ballet Adulto",
                             Facebook = "https://www.facebook.com/luana.ruiz.754",
-                            Foto = "/img/team-6.jpg",
+                            Foto = "/img/team/team-6.jpg",
                             Instagram = "https://www.instagram.com/luanaruiiz/",
                             Nome = "Luana Ruiz"
                         },
@@ -385,7 +385,7 @@ namespace AcademiaCintia.Migrations
                             Id = 7,
                             Cargo = "Professor de Zumba",
                             Facebook = "https://www.facebook.com/rauldaniel.pinheiro",
-                            Foto = "/img/team-7.jpg",
+                            Foto = "/img/team/team-7.jpg",
                             Instagram = "https://www.instagram.com/rahul_black_swan/",
                             Nome = "Raul Pinheiro"
                         },
@@ -394,7 +394,7 @@ namespace AcademiaCintia.Migrations
                             Id = 8,
                             Cargo = "Professora Fit Dance Teen & Kids",
                             Facebook = "https://www.facebook.com/profile.php?id=100015112025441",
-                            Foto = "/img/team-8.jpg",
+                            Foto = "/img/team/team-8.jpg",
                             Instagram = "https://www.instagram.com/tathy.7mene/ ",
                             Nome = "Tathy Meneghesso"
                         });
@@ -424,7 +424,7 @@ namespace AcademiaCintia.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "2f84cffe-065f-4da9-8852-28b1714ab425",
+                            UsuarioId = "f432da76-102b-4771-baf8-114d0c66950e",
                             DataNascimento = new DateTime(1973, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/users/avatar.png",
                             Nome = "Cintia Reco"
@@ -459,22 +459,22 @@ namespace AcademiaCintia.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "aaf63ac9-2bc2-40dc-9f77-17ba2672c22e",
-                            ConcurrencyStamp = "cd8a5bc3-ef83-4b86-b0d8-267185d4ad5b",
+                            Id = "952f7eaf-c91d-476b-9cdf-dfc02f700115",
+                            ConcurrencyStamp = "d1ba2694-97ee-41a4-81b0-74e8f033ad8f",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "2b36b12f-0af3-4ed5-a1e8-69127646d94f",
-                            ConcurrencyStamp = "11014ede-3bd6-496e-a5cb-e52eedb5f3bb",
+                            Id = "7e844028-1ebb-4497-96bb-7fb931b8da19",
+                            ConcurrencyStamp = "0917cafd-c328-4386-a049-fbabfea48b3f",
                             Name = "Funcionário",
                             NormalizedName = "FUNCIONARIO"
                         },
                         new
                         {
-                            Id = "00a5e440-2621-47a5-9b96-802f548f984e",
-                            ConcurrencyStamp = "6abc122c-ce98-4cdf-bbe7-9587403dd1e1",
+                            Id = "363db272-c7a6-4bf3-bdc5-0e31e5440649",
+                            ConcurrencyStamp = "1884148a-2b01-4d6b-9451-c2896de69aea",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         });
@@ -569,17 +569,17 @@ namespace AcademiaCintia.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2f84cffe-065f-4da9-8852-28b1714ab425",
+                            Id = "f432da76-102b-4771-baf8-114d0c66950e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d0938183-27e9-4913-a6ce-da2af09a48e5",
+                            ConcurrencyStamp = "00e41f91-07f5-4bb6-8af7-85517882f55f",
                             Email = "admin@academiacintiareco.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ACADEMIACINTIARECO.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEE9Wj8Ll3S5SPa8vpqYXR0QHuzO86eyYTFuu/+eijLDjcptHPbxVCwGa/7/urLxAVQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOP0qQctOKn+va1XJFhasHnW+ymeUL9neNHgZD3OjpTY2Lt0cfLXUdXtzSVsbVKf2Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f711dad8-d0e1-483e-bac1-1f16fece47e8",
+                            SecurityStamp = "1c634f1d-022f-4309-85b7-ec6e109d789c",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -647,18 +647,18 @@ namespace AcademiaCintia.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "2f84cffe-065f-4da9-8852-28b1714ab425",
-                            RoleId = "aaf63ac9-2bc2-40dc-9f77-17ba2672c22e"
+                            UserId = "f432da76-102b-4771-baf8-114d0c66950e",
+                            RoleId = "952f7eaf-c91d-476b-9cdf-dfc02f700115"
                         },
                         new
                         {
-                            UserId = "2f84cffe-065f-4da9-8852-28b1714ab425",
-                            RoleId = "2b36b12f-0af3-4ed5-a1e8-69127646d94f"
+                            UserId = "f432da76-102b-4771-baf8-114d0c66950e",
+                            RoleId = "7e844028-1ebb-4497-96bb-7fb931b8da19"
                         },
                         new
                         {
-                            UserId = "2f84cffe-065f-4da9-8852-28b1714ab425",
-                            RoleId = "00a5e440-2621-47a5-9b96-802f548f984e"
+                            UserId = "f432da76-102b-4771-baf8-114d0c66950e",
+                            RoleId = "363db272-c7a6-4bf3-bdc5-0e31e5440649"
                         });
                 });
 

@@ -323,15 +323,15 @@ namespace AcademiaCintia.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "00a5e440-2621-47a5-9b96-802f548f984e", "6abc122c-ce98-4cdf-bbe7-9587403dd1e1", "Cliente", "CLIENTE" },
-                    { "2b36b12f-0af3-4ed5-a1e8-69127646d94f", "11014ede-3bd6-496e-a5cb-e52eedb5f3bb", "Funcionário", "FUNCIONARIO" },
-                    { "aaf63ac9-2bc2-40dc-9f77-17ba2672c22e", "cd8a5bc3-ef83-4b86-b0d8-267185d4ad5b", "Administrador", "ADMINISTRADOR" }
+                    { "363db272-c7a6-4bf3-bdc5-0e31e5440649", "1884148a-2b01-4d6b-9451-c2896de69aea", "Cliente", "CLIENTE" },
+                    { "7e844028-1ebb-4497-96bb-7fb931b8da19", "0917cafd-c328-4386-a049-fbabfea48b3f", "Funcionário", "FUNCIONARIO" },
+                    { "952f7eaf-c91d-476b-9cdf-dfc02f700115", "d1ba2694-97ee-41a4-81b0-74e8f033ad8f", "Administrador", "ADMINISTRADOR" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2f84cffe-065f-4da9-8852-28b1714ab425", 0, "d0938183-27e9-4913-a6ce-da2af09a48e5", "admin@academiacintiareco.com", true, false, null, "ADMIN@ACADEMIACINTIARECO.COM", "ADMIN", "AQAAAAEAACcQAAAAEE9Wj8Ll3S5SPa8vpqYXR0QHuzO86eyYTFuu/+eijLDjcptHPbxVCwGa/7/urLxAVQ==", null, false, "f711dad8-d0e1-483e-bac1-1f16fece47e8", false, "Admin" });
+                values: new object[] { "f432da76-102b-4771-baf8-114d0c66950e", 0, "00e41f91-07f5-4bb6-8af7-85517882f55f", "admin@academiacintiareco.com", true, false, null, "ADMIN@ACADEMIACINTIARECO.COM", "ADMIN", "AQAAAAEAACcQAAAAEOP0qQctOKn+va1XJFhasHnW+ymeUL9neNHgZD3OjpTY2Lt0cfLXUdXtzSVsbVKf2Q==", null, false, "1c634f1d-022f-4309-85b7-ec6e109d789c", false, "Admin" });
 
             migrationBuilder.InsertData(
                 table: "Categoria",
@@ -348,8 +348,8 @@ namespace AcademiaCintia.Migrations
                 columns: new[] { "Id", "ComentarioData", "ComentarioTexto", "Foto", "Nome", "Nota" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 11, 24, 19, 0, 0, 0, DateTimeKind.Unspecified), "Academia top de mais, a melhor não tem.Professores sensacionais e a atenção dobrada em cima dos alunos!!!Vitão e Lopes estão de parabéns 👏🏻🤝🏻", "/img/testemionial/testemionial-1", "Raphael Machado Fernandes", (byte)5 },
-                    { 2, new DateTime(2023, 11, 24, 19, 0, 0, 0, DateTimeKind.Unspecified), "", "/img/testemionial/testemionial-2", "Deise Kawata", (byte)5 }
+                    { 1, new DateTime(2023, 11, 24, 19, 0, 0, 0, DateTimeKind.Unspecified), "Academia top de mais, a melhor não tem.Professores sensacionais e a atenção dobrada em cima dos alunos!!!Vitão e Lopes estão de parabéns 👏🏻🤝🏻", "/img/testemionial/testemionial-1.jpg", "Raphael Machado Fernandes", (byte)5 },
+                    { 2, new DateTime(2023, 11, 24, 19, 0, 0, 0, DateTimeKind.Unspecified), "", "/img/testemionial/testemionial-2.jpg", "Deise Kawata", (byte)5 }
                 });
 
             migrationBuilder.InsertData(
@@ -357,15 +357,15 @@ namespace AcademiaCintia.Migrations
                 columns: new[] { "Id", "Foto" },
                 values: new object[,]
                 {
-                    { 1, "/img/gallery-1" },
-                    { 2, "/img/gallery-2" },
-                    { 3, "/img/gallery-3" },
-                    { 4, "/img/gallery-4" },
-                    { 5, "/img/gallery-5" },
-                    { 6, "/img/gallery-6" },
-                    { 7, "/img/gallery-7" },
-                    { 8, "/img/gallery-8" },
-                    { 9, "/img/gallery-9" }
+                    { 1, "/img/gallery/gallery-1.jpg" },
+                    { 2, "/img/gallery/gallery-2.jpg" },
+                    { 3, "/img/gallery/gallery-3.jpg" },
+                    { 4, "/img/gallery/gallery-4.jpg" },
+                    { 5, "/img/gallery/gallery-5.jpg" },
+                    { 6, "/img/gallery/gallery-6.jpg" },
+                    { 7, "/img/gallery/gallery-7.jpg" },
+                    { 8, "/img/gallery/gallery-8.jpg" },
+                    { 9, "/img/gallery/gallery-9.jpg" }
                 });
 
             migrationBuilder.InsertData(
@@ -373,14 +373,14 @@ namespace AcademiaCintia.Migrations
                 columns: new[] { "Id", "Cargo", "Facebook", "Foto", "Instagram", "Nome" },
                 values: new object[,]
                 {
-                    { 1, "Diretora", "https://www.facebook.com/cintia.reco", "/img/team-1.jpg", "https://www.instagram.com/cintiareco/", "Cintia Reco" },
-                    { 2, "Professora Infantil e Juvenil", "https://www.facebook.com/raissa.reco", "/img/team-2.jpg", "https://www.instagram.com/raissa.recco/", "Raissa Reco" },
-                    { 3, "Professora Infantil", "https://www.facebook.com/jooh.silva.1656", "/img/team-3.jpg", "https://www.instagram.com/jo.silvacs/", "Joany Silva" },
-                    { 4, "Gym Trainer", "https://www.facebook.com/vitor.baldi.5", "/img/team-4.jpg", "https://www.instagram.com/vitor.baldi_/", "Vitor Baldi" },
-                    { 5, "Gym Trainer", "https://www.facebook.com/roberta.garcia.315", "/img/team-5.jpg", "https://www.instagram.com/rogarciadias/", "Roberta Garcia" },
-                    { 6, "Professora de Ballet Adulto", "https://www.facebook.com/luana.ruiz.754", "/img/team-6.jpg", "https://www.instagram.com/luanaruiiz/", "Luana Ruiz" },
-                    { 7, "Professor de Zumba", "https://www.facebook.com/rauldaniel.pinheiro", "/img/team-7.jpg", "https://www.instagram.com/rahul_black_swan/", "Raul Pinheiro" },
-                    { 8, "Professora Fit Dance Teen & Kids", "https://www.facebook.com/profile.php?id=100015112025441", "/img/team-8.jpg", "https://www.instagram.com/tathy.7mene/ ", "Tathy Meneghesso" }
+                    { 1, "Diretora", "https://www.facebook.com/cintia.reco", "/img/team/team-1.jpg", "https://www.instagram.com/cintiareco/", "Cintia Reco" },
+                    { 2, "Professora Infantil e Juvenil", "https://www.facebook.com/raissa.reco", "/img/team/team-2.jpg", "https://www.instagram.com/raissa.recco/", "Raissa Reco" },
+                    { 3, "Professora Infantil", "https://www.facebook.com/jooh.silva.1656", "/img/team/team-3.jpg", "https://www.instagram.com/jo.silvacs/", "Joany Silva" },
+                    { 4, "Gym Trainer", "https://www.facebook.com/vitor.baldi.5", "/img/team/team-4.jpg", "https://www.instagram.com/vitor.baldi_/", "Vitor Baldi" },
+                    { 5, "Gym Trainer", "https://www.facebook.com/roberta.garcia.315", "/img/team/team-5.jpg", "https://www.instagram.com/rogarciadias/", "Roberta Garcia" },
+                    { 6, "Professora de Ballet Adulto", "https://www.facebook.com/luana.ruiz.754", "/img/team/team-6.jpg", "https://www.instagram.com/luanaruiiz/", "Luana Ruiz" },
+                    { 7, "Professor de Zumba", "https://www.facebook.com/rauldaniel.pinheiro", "/img/team/team-7.jpg", "https://www.instagram.com/rahul_black_swan/", "Raul Pinheiro" },
+                    { 8, "Professora Fit Dance Teen & Kids", "https://www.facebook.com/profile.php?id=100015112025441", "/img/team/team-8.jpg", "https://www.instagram.com/tathy.7mene/ ", "Tathy Meneghesso" }
                 });
 
             migrationBuilder.InsertData(
@@ -388,9 +388,9 @@ namespace AcademiaCintia.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "00a5e440-2621-47a5-9b96-802f548f984e", "2f84cffe-065f-4da9-8852-28b1714ab425" },
-                    { "2b36b12f-0af3-4ed5-a1e8-69127646d94f", "2f84cffe-065f-4da9-8852-28b1714ab425" },
-                    { "aaf63ac9-2bc2-40dc-9f77-17ba2672c22e", "2f84cffe-065f-4da9-8852-28b1714ab425" }
+                    { "363db272-c7a6-4bf3-bdc5-0e31e5440649", "f432da76-102b-4771-baf8-114d0c66950e" },
+                    { "7e844028-1ebb-4497-96bb-7fb931b8da19", "f432da76-102b-4771-baf8-114d0c66950e" },
+                    { "952f7eaf-c91d-476b-9cdf-dfc02f700115", "f432da76-102b-4771-baf8-114d0c66950e" }
                 });
 
             migrationBuilder.InsertData(
@@ -415,7 +415,7 @@ namespace AcademiaCintia.Migrations
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "UsuarioId", "DataNascimento", "Foto", "Nome" },
-                values: new object[] { "2f84cffe-065f-4da9-8852-28b1714ab425", new DateTime(1973, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Cintia Reco" });
+                values: new object[] { "f432da76-102b-4771-baf8-114d0c66950e", new DateTime(1973, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Cintia Reco" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
