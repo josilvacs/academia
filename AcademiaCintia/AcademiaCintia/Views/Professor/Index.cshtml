@@ -5,12 +5,20 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Index</h1>
+@section Styles {
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+}
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+    <script src="~/js/datatables.js"></script>
+}
 
-<p>
-    <a asp-action="Create">Create New</a>
+<h1 class="display-4">Lista de Professores</h1>
+<p class="py-3">
+    <a class="btn btn-secondary" asp-action="Create" style="background-color: #3bb54a"><i class="bi bi-plus-circle-fill"></i> Adicionar</a>
 </p>
-<table class="table">
+
+<table id="myTable" class="table w-100">
     <thead>
         <tr>
             <th>
@@ -19,42 +27,28 @@
             <th>
                 @Html.DisplayNameFor(model => model.Cargo)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Foto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Facebook)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Instagram)
-            </th>
-            <th></th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cargo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Foto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Facebook)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Instagram)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cargo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" style="color: #3bb54a" data-bs-toggle="tooltip" data-bs-title="Editar Gênero"><i
+                            class="bi bi-pencil-fill"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" style="color: #3bb54a" data-bs-toggle="tooltip"
+                        data-bs-title="Exibir Detalhes"><i class="bi bi-search"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" style="color: #3bb54a" data-bs-toggle="tooltip"
+                        data-bs-title="Excluir Gênero"><i class="bi bi-trash-fill"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -181,29 +181,29 @@ public class AppDbSeed
         };
         builder.Entity<Modalidade>().HasData(modalidades);
         #endregion
-
         
-#region Populate Comentario
-        List<Categoria> categorias = new() {
+        #region Populate Comentario
+        List<Comentario> comentarios = new() {
             new () {
                 Id = 1,
-                Nome = "Raphael Machyado Fernandes",
-                Nota = "5",
-                Comentario ="Academia top de mais, a melhor não tem. Professores sensacionais e a atenção dobrada em cima dos alunos!!!Vitão e Lopes estão de parabéns 👏🏻🤝🏻",
-                Foto = "~/img/testemonial/testemonialo-1.png"
+                Nome = "Raphael Machado Fernandes",
+                ComentarioTexto = "Academia top de mais, a melhor não tem.Professores sensacionais e a atenção dobrada em cima dos alunos!!!Vitão e Lopes estão de parabéns 👏🏻🤝🏻",
+                ComentarioData = DateTime.Parse("24/11/2023 19:00"),
+                Nota = 5,
+                Foto = "~/img/testemionial/testemionial-1"
             },
             new () {
                 Id = 2,
-                Nome = "Deise Kawamata",
-                Nota = "5",
-                Comentario ="",
-                Foto = "~/img/testemonial/testemonialo-2.png"
-            },
-            
+                Nome = "Deise Kawata",
+                ComentarioTexto = "",
+                ComentarioData = DateTime.Parse("24/11/2023 19:00"),
+                Nota = 5,
+                Foto = "~/img/testemionial/testemionial-2"
+            }
         };
-        builder.Entity<Categoria>().HasData(categorias);
+        builder.Entity<Comentario>().HasData(comentarios);
         #endregion
-        
+
         #region Populate Roles - Perfis de Usuário
         List<IdentityRole> roles = new()
         {
@@ -253,7 +253,7 @@ public class AppDbSeed
                 UsuarioId = users[0].Id,
                 Nome = "José Antonio Gallo Junior",
                 DataNascimento = DateTime.Parse("05/08/1981"),
-                Foto = "/img/users/avatar.png"
+                Foto = "/img/users/avatar.jpg"
             }
         };
         builder.Entity<Usuario>().HasData(usuarios);
