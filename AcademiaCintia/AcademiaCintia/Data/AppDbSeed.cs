@@ -27,6 +27,47 @@ public class AppDbSeed
         builder.Entity<Categoria>().HasData(categorias);
         #endregion
         
+        #region Populate Galeria
+        List<Galeria> galerias = new() {
+            new () {
+                Id = 1,
+                Foto = "/img/gallery-1"
+            },
+            new () {
+                Id = 2,
+                Foto = "/img/gallery-2"
+            },
+            new () {
+                Id = 3,
+                Foto = "/img/gallery-3"
+            },
+            new () {
+                Id = 4,
+                Foto = "/img/gallery-4"
+            },
+            new () {
+                Id = 5,
+                Foto = "/img/gallery-5"
+            },
+            new () {
+                Id = 6,
+                Foto = "/img/gallery-6"
+            },
+            new () {
+                Id = 7,
+                Foto = "/img/gallery-7"
+            },
+            new () {
+                Id = 8,
+                Foto = "/img/gallery-8"
+            },
+            new () {
+                Id = 9,
+                Foto = "/img/gallery-9"
+            }
+        };
+        builder.Entity<Galeria>().HasData(galerias);
+        #endregion
 
         #region Populate Professor
         List<Professor> professores = new() {
@@ -34,6 +75,7 @@ public class AppDbSeed
                 Id = 1,
                 Nome = "Cintia Reco",
                 Cargo = "Diretora",
+                Foto = "/img/team-1.jpg",
                 Facebook = "https://www.facebook.com/cintia.reco",
                 Instagram = "https://www.instagram.com/cintiareco/"
             },
@@ -41,6 +83,7 @@ public class AppDbSeed
                 Id = 2,
                 Nome = "Raissa Reco",
                 Cargo = "Professora Infantil e Juvenil",
+                Foto = "/img/team-2.jpg",
                 Facebook = "https://www.facebook.com/raissa.reco",
                 Instagram = "https://www.instagram.com/raissa.recco/"
             },
@@ -48,6 +91,7 @@ public class AppDbSeed
                 Id = 3,
                 Nome = "Joany Silva",
                 Cargo = "Professora Infantil",
+                Foto = "/img/team-3.jpg",
                 Facebook = "https://www.facebook.com/jooh.silva.1656",
                 Instagram = "https://www.instagram.com/jo.silvacs/"
             },
@@ -55,6 +99,7 @@ public class AppDbSeed
                 Id = 4,
                 Nome = "Vitor Baldi",
                 Cargo = "Gym Trainer",
+                Foto = "/img/team-4.jpg",
                 Facebook = "https://www.facebook.com/vitor.baldi.5",
                 Instagram = "https://www.instagram.com/vitor.baldi_/"
             },
@@ -62,6 +107,7 @@ public class AppDbSeed
                 Id = 5,
                 Nome = "Roberta Garcia",
                 Cargo = "Gym Trainer",
+                Foto = "/img/team-5.jpg",
                 Facebook = "https://www.facebook.com/roberta.garcia.315",
                 Instagram = "https://www.instagram.com/rogarciadias/"
             },
@@ -69,6 +115,7 @@ public class AppDbSeed
                 Id = 6,
                 Nome = "Luana Ruiz",
                 Cargo = "Professora de Ballet Adulto",
+                Foto = "/img/team-6.jpg",
                 Facebook = "https://www.facebook.com/luana.ruiz.754",
                 Instagram = "https://www.instagram.com/luanaruiiz/"
             },
@@ -76,6 +123,7 @@ public class AppDbSeed
                 Id = 7,
                 Nome = "Raul Pinheiro",
                 Cargo = "Professor de Zumba",
+                Foto = "/img/team-7.jpg",
                 Facebook = "https://www.facebook.com/rauldaniel.pinheiro",
                 Instagram = "https://www.instagram.com/rahul_black_swan/"
             },
@@ -83,6 +131,7 @@ public class AppDbSeed
                 Id = 8,
                 Nome = "Tathy Meneghesso",
                 Cargo = "Professora Fit Dance Teen & Kids",
+                Foto = "/img/team-8.jpg",
                 Facebook = "https://www.facebook.com/profile.php?id=100015112025441",
                 Instagram = "https://www.instagram.com/tathy.7mene/ "
             },
@@ -190,7 +239,7 @@ public class AppDbSeed
                 ComentarioTexto = "Academia top de mais, a melhor não tem.Professores sensacionais e a atenção dobrada em cima dos alunos!!!Vitão e Lopes estão de parabéns 👏🏻🤝🏻",
                 ComentarioData = DateTime.Parse("24/11/2023 19:00"),
                 Nota = 5,
-                Foto = "~/img/testemionial/testemionial-1"
+                Foto = "/img/testemionial/testemionial-1"
             },
             new () {
                 Id = 2,
@@ -198,7 +247,7 @@ public class AppDbSeed
                 ComentarioTexto = "",
                 ComentarioData = DateTime.Parse("24/11/2023 19:00"),
                 Nota = 5,
-                Foto = "~/img/testemionial/testemionial-2"
+                Foto = "/img/testemionial/testemionial-2"
             }
         };
         builder.Entity<Comentario>().HasData(comentarios);
@@ -233,8 +282,8 @@ public class AppDbSeed
         List<IdentityUser> users = new(){
             new IdentityUser(){
                 Id = Guid.NewGuid().ToString(),
-                Email = "admin@cozastore.com",
-                NormalizedEmail = "ADMIN@COZASTORE.COM",
+                Email = "admin@academiacintiareco.com",
+                NormalizedEmail = "ADMIN@ACADEMIACINTIARECO.COM",
                 UserName = "Admin",
                 NormalizedUserName = "ADMIN",
                 LockoutEnabled = false,
@@ -244,16 +293,16 @@ public class AppDbSeed
         foreach (var user in users)
         {
             PasswordHasher<IdentityUser> pass = new();
-            user.PasswordHash = pass.HashPassword(user, "@Etec123");
+            user.PasswordHash = pass.HashPassword(user, "@Academia123");
         }
         builder.Entity<IdentityUser>().HasData(users);
 
         List<Usuario> usuarios = new(){
             new Usuario(){
                 UsuarioId = users[0].Id,
-                Nome = "José Antonio Gallo Junior",
-                DataNascimento = DateTime.Parse("05/08/1981"),
-                Foto = "/img/users/avatar.jpg"
+                Nome = "Cintia Reco",
+                DataNascimento = DateTime.Parse("13/02/1973"),
+                Foto = "/img/users/avatar.png"
             }
         };
         builder.Entity<Usuario>().HasData(usuarios);

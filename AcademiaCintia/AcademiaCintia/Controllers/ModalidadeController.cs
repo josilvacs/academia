@@ -13,11 +13,14 @@ namespace AcademiaCintia.Controllers
     public class ModalidadeController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public ModalidadeController(AppDbContext context)
+        public ModalidadeController(AppDbContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
+
 
         // GET: Modalidade
         public async Task<IActionResult> Index()

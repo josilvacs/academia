@@ -13,11 +13,14 @@ namespace AcademiaCintia.Controllers
     public class ProfessorController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public ProfessorController(AppDbContext context)
+        public ProfessorController(AppDbContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
+
 
         // GET: Professor
         public async Task<IActionResult> Index()

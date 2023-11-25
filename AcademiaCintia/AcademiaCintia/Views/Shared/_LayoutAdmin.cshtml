@@ -50,8 +50,14 @@
                     </li>
                      <li>
                         <a asp-action="Index" asp-controller="Comentario" class="nav-link @(ViewBag.Title == "Comentario" ? "active" : "link-body-emphasis")">
-                            <i class="bi bi-chat-left-heart-fill"></i>
+                            <i class="bi bi-chat-left-heart-fill me-2"></i>
                             Comentario
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="Galeria" class="nav-link @(ViewBag.Title == "Galeria" ? "active" : "link-body-emphasis")">
+                            <i class="bi bi-images me-2"></i>
+                            Galeria
                         </a>
                     </li>
                 </ul>

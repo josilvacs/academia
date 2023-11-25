@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
+<h1 class="display-4">Galeria</h1>
+<p class="py-3">
+    <a class="btn btn-secondary" asp-action="Create" style="background-color: #3bb54a"><i class="bi bi-plus-circle-fill"></i> Adicionar</a>
 </p>
 <table class="table">
     <thead>
@@ -26,9 +25,12 @@
                 @Html.DisplayFor(modelItem => item.Foto)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" style="color: #3bb54a" data-bs-toggle="tooltip" data-bs-title="Editar Gênero"><i
+                            class="bi bi-pencil-fill" ></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" style="color: #3bb54a" data-bs-toggle="tooltip"
+                        data-bs-title="Exibir Detalhes"><i class="bi bi-search"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" style="color: #3bb54a" data-bs-toggle="tooltip"
+                        data-bs-title="Excluir Gênero"><i class="bi bi-trash-fill"></i></a>
             </td>
         </tr>
 }

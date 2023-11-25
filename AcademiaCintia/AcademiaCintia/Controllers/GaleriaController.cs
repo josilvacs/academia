@@ -10,88 +10,85 @@ using AcademiaCintia.Models;
 
 namespace AcademiaCintia.Controllers
 {
-    public class ComentarioController : Controller
+    public class GaleriaController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public ComentarioController(AppDbContext context, IWebHostEnvironment hostEnvironment)
+        public GaleriaController(AppDbContext context)
         {
             _context = context;
-            _hostEnvironment = hostEnvironment;
         }
 
-
-        // GET: Comentario
+        // GET: Galeria
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Comentarios.ToListAsync());
+              return View(await _context.Galerias.ToListAsync());
         }
 
-        // GET: Comentario/Details/5
+        // GET: Galeria/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Comentarios == null)
+            if (id == null || _context.Galerias == null)
             {
                 return NotFound();
             }
 
-            var comentario = await _context.Comentarios
+            var galeria = await _context.Galerias
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (comentario == null)
+            if (galeria == null)
             {
                 return NotFound();
             }
 
-            return View(comentario);
+            return View(galeria);
         }
 
-        // GET: Comentario/Create
+        // GET: Galeria/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Comentario/Create
+        // POST: Galeria/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,ComentarioTexto,ComentarioData,Nota,Foto")] Comentario comentario)
+        public async Task<IActionResult> Create([Bind("Id,Foto")] Galeria galeria)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(comentario);
+                _context.Add(galeria);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(comentario);
+            return View(galeria);
         }
 
-        // GET: Comentario/Edit/5
+        // GET: Galeria/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Comentarios == null)
+            if (id == null || _context.Galerias == null)
             {
                 return NotFound();
             }
 
-            var comentario = await _context.Comentarios.FindAsync(id);
-            if (comentario == null)
+            var galeria = await _context.Galerias.FindAsync(id);
+            if (galeria == null)
             {
                 return NotFound();
             }
-            return View(comentario);
+            return View(galeria);
         }
 
-        // POST: Comentario/Edit/5
+        // POST: Galeria/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,ComentarioTexto,ComentarioData,Nota,Foto")] Comentario comentario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Foto")] Galeria galeria)
         {
-            if (id != comentario.Id)
+            if (id != galeria.Id)
             {
                 return NotFound();
             }
@@ -100,12 +97,12 @@ namespace AcademiaCintia.Controllers
             {
                 try
                 {
-                    _context.Update(comentario);
+                    _context.Update(galeria);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ComentarioExists(comentario.Id))
+                    if (!GaleriaExists(galeria.Id))
                     {
                         return NotFound();
                     }
@@ -116,49 +113,49 @@ namespace AcademiaCintia.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(comentario);
+            return View(galeria);
         }
 
-        // GET: Comentario/Delete/5
+        // GET: Galeria/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Comentarios == null)
+            if (id == null || _context.Galerias == null)
             {
                 return NotFound();
             }
 
-            var comentario = await _context.Comentarios
+            var galeria = await _context.Galerias
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (comentario == null)
+            if (galeria == null)
             {
                 return NotFound();
             }
 
-            return View(comentario);
+            return View(galeria);
         }
 
-        // POST: Comentario/Delete/5
+        // POST: Galeria/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Comentarios == null)
+            if (_context.Galerias == null)
             {
-                return Problem("Entity set 'AppDbContext.Comentarios'  is null.");
+                return Problem("Entity set 'AppDbContext.Galerias'  is null.");
             }
-            var comentario = await _context.Comentarios.FindAsync(id);
-            if (comentario != null)
+            var galeria = await _context.Galerias.FindAsync(id);
+            if (galeria != null)
             {
-                _context.Comentarios.Remove(comentario);
+                _context.Galerias.Remove(galeria);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ComentarioExists(int id)
+        private bool GaleriaExists(int id)
         {
-          return _context.Comentarios.Any(e => e.Id == id);
+          return _context.Galerias.Any(e => e.Id == id);
         }
     }
 }
