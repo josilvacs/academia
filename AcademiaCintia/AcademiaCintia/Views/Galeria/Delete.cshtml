@@ -15,7 +15,7 @@
         <div class="col-md-4 col-sm-12 col-xxl-3">
         <div class="form-group">
             <label asp-for="Foto" class="form-label"></label>
-            <img src='@Url.Content("~/" + Model.Foto)' class="img-fluid w-100">
+            <img src='@Model.Foto' class="img-fluid w-100">
         </div>
     </div>
     <form asp-action="Delete">
