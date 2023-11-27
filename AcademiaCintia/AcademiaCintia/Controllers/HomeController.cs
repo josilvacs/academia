@@ -1,26 +1,37 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using AcademiaCintia.Models;
+using AcademiaCintia.ViewModels;
+using AcademiaCintia.Data;
 
 namespace AcademiaCintia.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly AppDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, AppDbContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
     {
-        return View();
+        IndexVM index = new() {
+            Professores = _context.Professores.ToList()
+        };
+        return View(index);
     }
 
     public IActionResult SobreNos()
     {
-        return View();
+        SobreNosVM sobre = new() {
+            Professores = _context.Professores.ToList(),
+            Comentarios = _context.Comentarios.ToList()
+        };
+        return View(sobre);
     }
 
     public IActionResult Horarios()
@@ -30,12 +41,18 @@ public class HomeController : Controller
 
     public IActionResult Modalidades()
     {
-        return View();
+        ModalidadesVM modalidades = new() {
+            Modalidades = _context.Modalidades.ToList(),
+        };
+        return View(modalidades);
     }
 
     public IActionResult NossoTime()
     {
-        return View();
+        NossoTimeVM nossoTime = new() {
+            Professores = _context.Professores.ToList()
+        };
+        return View(nossoTime);
     }
 
     public IActionResult TesteIMC()

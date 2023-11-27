@@ -87,8 +87,8 @@ namespace AcademiaCintia.Migrations
                         {
                             Id = 1,
                             ComentarioData = new DateTime(2023, 11, 24, 19, 0, 0, 0, DateTimeKind.Unspecified),
-                            ComentarioTexto = "Academia top de mais, a melhor não tem.Professores sensacionais e a atenção dobrada em cima dos alunos!!!Vitão e Lopes estão de parabéns 👏🏻🤝🏻",
-                            Foto = "/img/testemionial/testemionial-1.jpg",
+                            ComentarioTexto = "Academia top de mais, a melhor não tem.<br>Professores sensacionais e a atenção dobrada em cima dos alunos!!!<br>Vitão e Lopes estão de parabéns 👏🏻🤝🏻",
+                            Foto = "/img/testimonial/testimonial-1.jpg",
                             Nome = "Raphael Machado Fernandes",
                             Nota = (byte)5
                         },
@@ -97,7 +97,7 @@ namespace AcademiaCintia.Migrations
                             Id = 2,
                             ComentarioData = new DateTime(2023, 11, 24, 19, 0, 0, 0, DateTimeKind.Unspecified),
                             ComentarioTexto = "",
-                            Foto = "/img/testemionial/testemionial-2.jpg",
+                            Foto = "/img/testimonial/testimonial-2.jpg",
                             Nome = "Deise Kawata",
                             Nota = (byte)5
                         });
@@ -424,7 +424,7 @@ namespace AcademiaCintia.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "f432da76-102b-4771-baf8-114d0c66950e",
+                            UsuarioId = "f5a530f5-885d-4102-b5f5-d7645f48231a",
                             DataNascimento = new DateTime(1973, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/users/avatar.png",
                             Nome = "Cintia Reco"
@@ -459,22 +459,22 @@ namespace AcademiaCintia.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "952f7eaf-c91d-476b-9cdf-dfc02f700115",
-                            ConcurrencyStamp = "d1ba2694-97ee-41a4-81b0-74e8f033ad8f",
+                            Id = "dddf41fa-efd6-43e4-8c2f-f90d5a657cbe",
+                            ConcurrencyStamp = "1a0d4533-b963-4e52-9a4e-15a8e1e6c10e",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "7e844028-1ebb-4497-96bb-7fb931b8da19",
-                            ConcurrencyStamp = "0917cafd-c328-4386-a049-fbabfea48b3f",
+                            Id = "17016585-b1e6-4efc-960e-5d813d2fe660",
+                            ConcurrencyStamp = "4a735f4e-19d3-4690-b0e4-c663f8df4214",
                             Name = "Funcionário",
                             NormalizedName = "FUNCIONARIO"
                         },
                         new
                         {
-                            Id = "363db272-c7a6-4bf3-bdc5-0e31e5440649",
-                            ConcurrencyStamp = "1884148a-2b01-4d6b-9451-c2896de69aea",
+                            Id = "9df74fe2-be8a-4d58-9ce0-3f262d74101a",
+                            ConcurrencyStamp = "8de6085c-7479-4d01-abae-36f3e5e03a55",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         });
@@ -569,17 +569,17 @@ namespace AcademiaCintia.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f432da76-102b-4771-baf8-114d0c66950e",
+                            Id = "f5a530f5-885d-4102-b5f5-d7645f48231a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "00e41f91-07f5-4bb6-8af7-85517882f55f",
+                            ConcurrencyStamp = "f908a79a-e5e8-435c-8ec4-16f6431481b7",
                             Email = "admin@academiacintiareco.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ACADEMIACINTIARECO.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOP0qQctOKn+va1XJFhasHnW+ymeUL9neNHgZD3OjpTY2Lt0cfLXUdXtzSVsbVKf2Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDtru6ApVNVFTQWLvPQP2MCnWV7IQ9ztbFxFu7xf/YR1AJlVCf3S6JqplVGaJJ6Dfw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1c634f1d-022f-4309-85b7-ec6e109d789c",
+                            SecurityStamp = "584f89e9-c650-4f54-935c-9c1a332df350",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -647,18 +647,18 @@ namespace AcademiaCintia.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "f432da76-102b-4771-baf8-114d0c66950e",
-                            RoleId = "952f7eaf-c91d-476b-9cdf-dfc02f700115"
+                            UserId = "f5a530f5-885d-4102-b5f5-d7645f48231a",
+                            RoleId = "dddf41fa-efd6-43e4-8c2f-f90d5a657cbe"
                         },
                         new
                         {
-                            UserId = "f432da76-102b-4771-baf8-114d0c66950e",
-                            RoleId = "7e844028-1ebb-4497-96bb-7fb931b8da19"
+                            UserId = "f5a530f5-885d-4102-b5f5-d7645f48231a",
+                            RoleId = "17016585-b1e6-4efc-960e-5d813d2fe660"
                         },
                         new
                         {
-                            UserId = "f432da76-102b-4771-baf8-114d0c66950e",
-                            RoleId = "363db272-c7a6-4bf3-bdc5-0e31e5440649"
+                            UserId = "f5a530f5-885d-4102-b5f5-d7645f48231a",
+                            RoleId = "9df74fe2-be8a-4d58-9ce0-3f262d74101a"
                         });
                 });
 

@@ -236,10 +236,10 @@ public class AppDbSeed
             new () {
                 Id = 1,
                 Nome = "Raphael Machado Fernandes",
-                ComentarioTexto = "Academia top de mais, a melhor não tem.Professores sensacionais e a atenção dobrada em cima dos alunos!!!Vitão e Lopes estão de parabéns 👏🏻🤝🏻",
+                ComentarioTexto = "Academia top de mais, a melhor não tem.<br>Professores sensacionais e a atenção dobrada em cima dos alunos!!!<br>Vitão e Lopes estão de parabéns 👏🏻🤝🏻",
                 ComentarioData = DateTime.Parse("24/11/2023 19:00"),
                 Nota = 5,
-                Foto = "/img/testemionial/testemionial-1.jpg"
+                Foto = "/img/testimonial/testimonial-1.jpg"
             },
             new () {
                 Id = 2,
@@ -247,7 +247,7 @@ public class AppDbSeed
                 ComentarioTexto = "",
                 ComentarioData = DateTime.Parse("24/11/2023 19:00"),
                 Nota = 5,
-                Foto = "/img/testemionial/testemionial-2.jpg"
+                Foto = "/img/testimonial/testimonial-2.jpg"
             }
         };
         builder.Entity<Comentario>().HasData(comentarios);

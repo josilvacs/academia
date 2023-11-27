@@ -14,125 +14,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-1.jpg" class="ss-pic" alt="...">
+            @foreach (var modalidade in Model.Modalidades)
+            {
+                <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
+                <img src="@modalidade.Foto" class="ss-pic" alt="...">
                 <div class="card-body p-0">
-                    <h5 class="card-title">Ballet Clássico</h5>
-                    <p class="card-text">O Ballet Clássico traz diversos benefícios, como melhora da postura,
-                        flexibilidade, coordenação motora, força muscular, disciplina, expressão artística e bem-estar
-                        mental.</p>
+                    <h5 class="card-title">@modalidade.Nome</h5>
+                    <p class="card-text">@modalidade.Descricao</p>
                 </div>
             </div>
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-2.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Sapateado</h5>
-                    <p class="card-text">O sapateado traz benefícios como melhora do ritmo, coordenação e consciência
-                        corporal.
-                        Além disso, é uma forma divertida de exercício que combina música e movimento.</p>
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-3.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Zumba</h5>
-                    <p class="card-text">A Zumba é uma atividade física que combina dança e exercício aeróbico, trazendo
-                        benefícios como melhora da resistência cardiovascular, queima de calorias e aumento da
-                        coordenação motora.</p>
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-4.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Dance Kids</h5>
-                    <p class="card-text">A dança para crianças traz benefícios como desenvolvimento da coordenação
-                        motora, melhora da postura, expressão artística, além de promover a socialização e
-                        autoconfiança.</p>
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-5.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Dance Teen</h5>
-                    <p class="card-text">A Dance Teen traz benefícios como melhora da coordenação motora, flexibilidade,
-                        condicionamento físico e postura. Além disso, a dança promove a expressão, autoconfiança e
-                        bem-estar.</p>
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-6.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Divas</h5>
-                    <p class="card-text">A aula das Divas traz benefícios como melhora da flexibilidade, equilíbrio,
-                        coordenação motora e mobilidade articular. Além disso, a dança promove o convívio social,
-                        estimula a memória e melhora o humor.</p>
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-7.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Fit Dance</h5>
-                    <p class="card-text"> O Fit Dance traz benefícios como melhora do condicionamento físico, queima de
-                        calorias, fortalecimento muscular, aumento da coordenação motora e melhora do equilíbrio.</p>
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-8.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Jazz</h5>
-                    <p class="card-text"> O Jazz traz benefícios como desenvolvimento da flexibilidade, força muscular,
-                        coordenação motora e resistência cardiovascular. </p>
-                </div>
-            </div>
-
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-10.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Musculação</h5>
-                    <p class="card-text"> A musculação é um tipo de exercício realizado com pesos de diversas cargas,
-                        amplitude e tempo de contração,
-                        o que faz dela uma atividade física indicada para pessoas de diversas idades e com diferentes
-                        objetivos.</p>
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-11.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Alongamento</h5>
-                    <p class="card-text"> Os exercícios de alongamento promovem um estiramento das fibras musculares,
-                        aumentando a flexibilidade do músculo.
-                        O corpo ganha elasticidade, melhorando o desempenho nas atividades físicas e nas tarefas
-                        diárias.</p>
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-12.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Funcional</h5>
-                    <p class="card-text"> A aula de Funcional é um esporte que envolve a prática de uma série de
-                        movimentos que requer força, flexibilidade e coordenação motora.</p>
-                </div>
-            </div>
-
-            <div class="card col-lg-3 col-md-3 col-sm-6 p-1 bg-transparent">
-                <img src="~/img/services/services-13.jpg" class="ss-pic" alt="...">
-                <div class="card-body p-0">
-                    <h5 class="card-title">Step</h5>
-                    <p class="card-text"> Consiste em fazer exercícios diversos utilizando o auxílio de um step. Essa
-                        modalidade inclui exercícios que movimentam braços e pernas. A dificuldade do movimento pode ser
-                        regulada pela intensidade de movimentos.</p>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>
