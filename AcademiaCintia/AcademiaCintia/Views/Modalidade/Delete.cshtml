@@ -5,13 +5,14 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1 class="display-4">Delete</h1>
+<h1 class="display-4">Modalidade</h1>
+<h4 class="display-6">Excluir</h4>
 
-<h3>Tem certeza que quer remover essa Modalidade?</h3>
+<h3 class="text-danger">Confirma a exclusão desse Modalidade?</h3>
 <div>
-    <h4>Modalidade</h4>
-    <hr />
-    <dl class="row">
+    <dl class="row" enctype="multipart/form-data">
+        <div class="col-md-4 col-sm-12 col-xxl-3">
+
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
